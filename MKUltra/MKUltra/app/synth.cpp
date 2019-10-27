@@ -1,20 +1,60 @@
 #include <iostream>
-#include <conio.h>
-#include "olcNoiseMaker.h"
+#include <cmath>
+
+#include <portaudio.h>
+
+#include "sound.h"
 #include "oscillator.h"
-// XXX #include "oscMixer.h"
 #include "envelope.h"
 #include "instrument.h"
+
+#define NUM_SECONDS	(3)
 
 instrument SYNTH1;
 double sysTime;
 
+
+int main(void)
+{
+	std::cout << "Synth Prototype 1" << std::endl;
+
+	Sound sound;
+
+	ScopedPaHandler paInit;
+	PaError res = paInit.result();
+	if (res != paNoError) {
+		std::cerr << "Error #: " << res << std::endl;
+		std::cerr << "Message: " << Pa_GetErrorText(res) << std::endl;
+		return 1;
+	}
+
+	if (sound.open(Pa_GetDefaultOutputDevice()) == false) {
+		std::cerr << "Error: Can't open output device" << std::endl;
+		return 1;
+	}
+
+	if (sound.start()) {
+		printf("Play for %d seconds.\n", NUM_SECONDS);
+		Pa_Sleep(NUM_SECONDS * 1000);
+
+		sound.stop();
+	}
+
+	sound.close();
+
+	return paNoError;
+}
+
+
+#if 0 // XXX
 double MakeNoise1(double dTime)
 {
 	sysTime = dTime;
 	return SYNTH1.outputSound(dTime);
 }
+#endif // XXX
 
+#if 0 // XXX
 void printMIDIDevices()
 {
 	UINT numMidiInDev;
@@ -36,7 +76,9 @@ void printMIDIDevices()
 			wcout << "Found Midi Input: " << pmic.szPname << endl;
 	}
 }
+#endif // XXX
 
+#if 0 // XXX
 void CALLBACK MidiInProc(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD dwParam1, DWORD dwParam2)
 {
 	constexpr unsigned char mask0{ 0b1111'0000 }; // represents bit 0
@@ -86,7 +128,9 @@ void CALLBACK MidiInProc(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD dwP
 	}
 	return;
 }
+#endif // XXX
 
+#if 0 // XXX
 int main()
 {
 	wcout << "Synth Prototype 1" << endl;
@@ -139,3 +183,4 @@ int main()
 
 	return 0;
 }
+#endif // XXX

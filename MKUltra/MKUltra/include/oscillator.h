@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include "olcNoiseMaker.h"
 
 using namespace std;
 
