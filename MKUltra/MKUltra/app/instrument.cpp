@@ -1,3 +1,4 @@
+#include <cmath>
 #include "instrument.h"
 
 instrument::instrument()

@@ -1,11 +1,13 @@
+#include <cmath>
 #include "oscillator.h"
+#include "sound.h"
 
 oscillator::oscillator()
 {
 	this->type = 0;
 	this->amplitude = 1.0;
 	this->phaseShift = 0.0;
-	this->period = 2 * PI;
+	this->period = 2 * M_PI;
 	this->frequency = 0.0;
 	this->frequencyMultiple = 1.0; //This is used to change octaves i.e. x2 = up one octave|x0.5 = down one octave
 }
@@ -80,7 +82,7 @@ double oscillator::evaluateFunction(double dTime)
 	case OSC_SQUARE: //Square Wave
 		return amplitude*sin(w(frequency * frequencyMultiple) * dTime) > 0.0 ? 1.0 : -1.0;
 	case OSC_TRIANGLE: //Triangle Wave
-		return amplitude*asin(sin(w(frequency * frequencyMultiple)) * (2.0 / PI));
+		return amplitude*asin(sin(w(frequency * frequencyMultiple)) * (2.0 / M_PI));
 	case OSC_SAW_ANA: // Saw Wave (analogue / warm / slow)
 	{
 		double dOutput = 0.0;
@@ -88,10 +90,10 @@ double oscillator::evaluateFunction(double dTime)
 		for (double n = 1.0; n < 100.0; n++)
 			dOutput += (sin(n * w(frequency* frequencyMultiple))) / n;
 
-		return amplitude*dOutput * (2.0 / PI);
+		return amplitude*dOutput * (2.0 / M_PI);
 	}
 	case OSC_SAW_DIG: // Saw Wave (optimized / harsh / fast)
-		return amplitude*((2.0 / PI) * (w(frequency * frequencyMultiple) * PI * fmod(dTime, 1.0 / frequency) - (PI / 2.0)));
+		return amplitude*((2.0 / M_PI) * (w(frequency * frequencyMultiple) * M_PI * fmod(dTime, 1.0 / frequency) - (M_PI / 2.0)));
 	case OSC_NOISE: // Pseudo Random Noise
 		return amplitude*(2.0 * ((double)rand() / (double)RAND_MAX) - 1.0);
 
@@ -102,5 +104,5 @@ double oscillator::evaluateFunction(double dTime)
 
 double oscillator::w(double dHertz)
 {
-	return dHertz * 2.0 * PI;
+	return dHertz * 2.0 * M_PI;
 }
