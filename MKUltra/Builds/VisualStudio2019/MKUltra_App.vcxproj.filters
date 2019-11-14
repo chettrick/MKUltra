@@ -4215,6 +4215,12 @@
     <ClInclude Include="..\..\JuceLibraryCode\JuceHeader.h">
       <Filter>JUCE Library Code</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\SineWave.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Synth.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\JuceLibraryCode\modules\juce_audio_formats\codecs\flac\Flac Licence.txt">
