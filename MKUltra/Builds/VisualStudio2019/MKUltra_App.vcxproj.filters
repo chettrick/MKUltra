@@ -388,9 +388,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\MainComponent.cpp">
-      <Filter>MKUltra\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>MKUltra\Source</Filter>
     </ClCompile>
