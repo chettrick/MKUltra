@@ -3,9 +3,9 @@
 <JUCERPROJECT id="Ajl5Bs" name="MKUltra" projectType="guiapp" jucerVersion="5.4.5">
   <MAINGROUP id="YmlcVE" name="MKUltra">
     <GROUP id="{F38C313C-5C47-D7D4-9C3F-D30A9D1CCC04}" name="Source">
+      <FILE id="dq409p" name="SineWave.h" compile="0" resource="0" file="Source/SineWave.h"/>
+      <FILE id="Pkv2Us" name="Synth.h" compile="0" resource="0" file="Source/Synth.h"/>
       <FILE id="tgL0E6" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="p2GGbQ" name="MainComponent.cpp" compile="1" resource="0"
-            file="Source/MainComponent.cpp"/>
       <FILE id="ak7GzD" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
   </MAINGROUP>

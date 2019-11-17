@@ -57,10 +57,6 @@
 			isa = PBXBuildFile;
 			fileRef = 70C99D8EC3C6735C856796D3;
 		};
-		8E68596FBF836231A54653CB = {
-			isa = PBXBuildFile;
-			fileRef = 0F19E58BFFA0DBF4558F1398;
-		};
 		97882FDB5907E688EDF9FAEA = {
 			isa = PBXBuildFile;
 			fileRef = 7BBB75056DDDE0AE97327BCB;
@@ -114,13 +110,6 @@
 			lastKnownFileType = file;
 			name = "juce_audio_basics";
 			path = "../../JuceLibraryCode/modules/juce_audio_basics";
-			sourceTree = "SOURCE_ROOT";
-		};
-		0F19E58BFFA0DBF4558F1398 = {
-			isa = PBXFileReference;
-			lastKnownFileType = sourcecode.cpp.cpp;
-			name = MainComponent.cpp;
-			path = ../../Source/MainComponent.cpp;
 			sourceTree = "SOURCE_ROOT";
 		};
 		120FDD720A23F62BB47140CD = {
@@ -199,6 +188,13 @@
 			name = WebKit.framework;
 			path = System/Library/Frameworks/WebKit.framework;
 			sourceTree = SDKROOT;
+		};
+		53FA554953054A20698D492D = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Synth.h;
+			path = ../../Source/Synth.h;
+			sourceTree = "SOURCE_ROOT";
 		};
 		6395ACECB02570ED0F772470 = {
 			isa = PBXFileReference;
@@ -354,6 +350,13 @@
 			path = "../../JuceLibraryCode/include_juce_graphics.mm";
 			sourceTree = "SOURCE_ROOT";
 		};
+		D34EBBAB32F72CA5A786BE00 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = SineWave.h;
+			path = ../../Source/SineWave.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		DC6E87D5E07E00390EB21533 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -406,8 +409,9 @@
 		FE4C57E84A7183AF4D471202 = {
 			isa = PBXGroup;
 			children = (
+				D34EBBAB32F72CA5A786BE00,
+				53FA554953054A20698D492D,
 				F09DD654569FD8EA93703E91,
-				0F19E58BFFA0DBF4558F1398,
 				7BBB75056DDDE0AE97327BCB,
 			);
 			name = Source;
@@ -721,7 +725,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E68596FBF836231A54653CB,
 				97882FDB5907E688EDF9FAEA,
 				33FFBA353FBD24136C77A5ED,
 				D82087668ECA534AB1E35732,
