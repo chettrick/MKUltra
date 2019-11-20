@@ -25,10 +25,6 @@ public:
         : synthAudioSource(keyboardState),
         keyboardComponent(keyboardState, MidiKeyboardComponent::horizontalKeyboard)
     {
-        addAndMakeVisible(midiInputListLabel);
-        midiInputListLabel.setText("MIDI Input:", dontSendNotification);
-        midiInputListLabel.attachToComponent(&midiInputList, true);
-
         auto midiInputs = MidiInput::getAvailableDevices();
         addAndMakeVisible(midiInputList);
         midiInputList.setTextWhenNoChoicesAvailable("No MIDI Inputs Enabled");
@@ -52,14 +48,39 @@ public:
             setMidiInput(0);
         }
 
-        addAndMakeVisible(keyboardComponent);
-
         // Specify the number of input and output channels that we want to open
         setAudioChannels(0, 2);
 
+        // Set up all graphical components.
+        addAndMakeVisible (keyboardComponent);
+
+        oscillator1Button.setButtonText ("Oscillator 1");
+        addAndMakeVisible (oscillator1Button);
+
+        oscillator2Button.setButtonText ("Oscillator 2");
+        addAndMakeVisible (oscillator2Button);
+
+        mixerButton.setButtonText ("Mixer");
+        addAndMakeVisible (mixerButton);
+
+        highPassFilterButton.setButtonText ("High Pass Filter");
+        addAndMakeVisible (highPassFilterButton);
+
+        lowPassFilterButton.setButtonText ("Low Pass Filter");
+        addAndMakeVisible (lowPassFilterButton);
+
+        envelope1Button.setButtonText ("Envelope 1");
+        addAndMakeVisible (envelope1Button);
+
+        envelope2Button.setButtonText ("Envelope 2");
+        addAndMakeVisible (envelope2Button);
+
+        masterButton.setButtonText ("Master");
+        addAndMakeVisible (masterButton);
+
         // Make sure you set the size of the component after
         // you add any child components.
-        setSize(600, 190);
+        setSize(1000, 600);
 
         // Grab the computer's keyboard focus after a short delay.
         startTimer(400);
@@ -115,8 +136,22 @@ public:
         // This is called when the MainComponent is resized.
         // If you add any child components, this is where you should
         // update their positions.
-        midiInputList.setBounds(200, 10, getWidth() - 210, 20);
-        keyboardComponent.setBounds(10, 40, getWidth() - 20, getHeight() - 50);
+        auto area = getLocalBounds();
+
+        auto midiInputListHeight = 25;
+        auto keyboardComponentHeight = 100;
+        midiInputList.setBounds(area.removeFromTop(midiInputListHeight));
+        keyboardComponent.setBounds(area.removeFromBottom(keyboardComponentHeight));
+
+        auto contentItemWidth = 125;
+        oscillator1Button.setBounds     (area.removeFromLeft (contentItemWidth));
+        oscillator2Button.setBounds     (area.removeFromLeft (contentItemWidth));
+        mixerButton.setBounds           (area.removeFromLeft (contentItemWidth));
+        highPassFilterButton.setBounds  (area.removeFromLeft (contentItemWidth));
+        lowPassFilterButton.setBounds   (area.removeFromLeft (contentItemWidth));
+        envelope1Button.setBounds       (area.removeFromLeft (contentItemWidth));
+        envelope2Button.setBounds       (area.removeFromLeft (contentItemWidth));
+        masterButton.setBounds          (area.removeFromLeft (contentItemWidth));
     }
 
 private:
@@ -151,8 +186,16 @@ private:
     MidiKeyboardComponent keyboardComponent;
 
     ComboBox midiInputList;
-    Label midiInputListLabel;
     int lastInputIndex = 0;
+
+    TextButton oscillator1Button;
+    TextButton oscillator2Button;
+    TextButton mixerButton;
+    TextButton highPassFilterButton;
+    TextButton lowPassFilterButton;
+    TextButton envelope1Button;
+    TextButton envelope2Button;
+    TextButton masterButton;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
