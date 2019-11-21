@@ -11,6 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #include "Synth.h"
+#include "PanelComponent.h"
 
 //==============================================================================
 /*
@@ -23,7 +24,15 @@ public:
     //==============================================================================
     MainComponent()
         : synthAudioSource(keyboardState),
-        keyboardComponent(keyboardState, MidiKeyboardComponent::horizontalKeyboard)
+        keyboardComponent(keyboardState, MidiKeyboardComponent::horizontalKeyboard),
+        oscillator1Component("Oscillator 1"),
+        oscillator2Component("Oscillator 2"),
+        mixerComponent("Mixer"),
+        highPassFilterComponent("High Pass Filter"),
+        lowPassFilterComponent("Low Pass Filter"),
+        envelope1Component("Envelope 1"),
+        envelope2Component("Envelope 2"),
+        masterComponent("Master Volume")
     {
         auto midiInputs = MidiInput::getAvailableDevices();
         addAndMakeVisible(midiInputList);
@@ -54,29 +63,15 @@ public:
         // Set up all graphical components.
         addAndMakeVisible (keyboardComponent);
 
-        oscillator1Button.setButtonText ("Oscillator 1");
-        addAndMakeVisible (oscillator1Button);
-
-        oscillator2Button.setButtonText ("Oscillator 2");
-        addAndMakeVisible (oscillator2Button);
-
-        mixerButton.setButtonText ("Mixer");
-        addAndMakeVisible (mixerButton);
-
-        highPassFilterButton.setButtonText ("High Pass Filter");
-        addAndMakeVisible (highPassFilterButton);
-
-        lowPassFilterButton.setButtonText ("Low Pass Filter");
-        addAndMakeVisible (lowPassFilterButton);
-
-        envelope1Button.setButtonText ("Envelope 1");
-        addAndMakeVisible (envelope1Button);
-
-        envelope2Button.setButtonText ("Envelope 2");
-        addAndMakeVisible (envelope2Button);
-
-        masterButton.setButtonText ("Master");
-        addAndMakeVisible (masterButton);
+        // Add each panel component to the window.
+        addAndMakeVisible (oscillator1Component);
+        addAndMakeVisible (oscillator2Component);
+        addAndMakeVisible (mixerComponent);
+        addAndMakeVisible (highPassFilterComponent);
+        addAndMakeVisible (lowPassFilterComponent);
+        addAndMakeVisible (envelope1Component);
+        addAndMakeVisible (envelope2Component);
+        addAndMakeVisible (masterComponent);
 
         // Make sure you set the size of the component after
         // you add any child components.
@@ -140,18 +135,18 @@ public:
 
         auto midiInputListHeight = 25;
         auto keyboardComponentHeight = 100;
-        midiInputList.setBounds(area.removeFromTop(midiInputListHeight));
-        keyboardComponent.setBounds(area.removeFromBottom(keyboardComponentHeight));
+        midiInputList.setBounds             (area.removeFromTop(midiInputListHeight));
+        keyboardComponent.setBounds         (area.removeFromBottom(keyboardComponentHeight));
 
         auto contentItemWidth = 125;
-        oscillator1Button.setBounds     (area.removeFromLeft (contentItemWidth));
-        oscillator2Button.setBounds     (area.removeFromLeft (contentItemWidth));
-        mixerButton.setBounds           (area.removeFromLeft (contentItemWidth));
-        highPassFilterButton.setBounds  (area.removeFromLeft (contentItemWidth));
-        lowPassFilterButton.setBounds   (area.removeFromLeft (contentItemWidth));
-        envelope1Button.setBounds       (area.removeFromLeft (contentItemWidth));
-        envelope2Button.setBounds       (area.removeFromLeft (contentItemWidth));
-        masterButton.setBounds          (area.removeFromLeft (contentItemWidth));
+        oscillator1Component.setBounds      (area.removeFromLeft(contentItemWidth));
+        oscillator2Component.setBounds      (area.removeFromLeft(contentItemWidth));
+        mixerComponent.setBounds            (area.removeFromLeft(contentItemWidth));
+        highPassFilterComponent.setBounds   (area.removeFromLeft(contentItemWidth));
+        lowPassFilterComponent.setBounds    (area.removeFromLeft(contentItemWidth));
+        envelope1Component.setBounds        (area.removeFromLeft(contentItemWidth));
+        envelope2Component.setBounds        (area.removeFromLeft(contentItemWidth));
+        masterComponent.setBounds           (area.removeFromLeft(contentItemWidth));
     }
 
 private:
@@ -188,14 +183,14 @@ private:
     ComboBox midiInputList;
     int lastInputIndex = 0;
 
-    TextButton oscillator1Button;
-    TextButton oscillator2Button;
-    TextButton mixerButton;
-    TextButton highPassFilterButton;
-    TextButton lowPassFilterButton;
-    TextButton envelope1Button;
-    TextButton envelope2Button;
-    TextButton masterButton;
+    PanelComponent oscillator1Component;
+    PanelComponent oscillator2Component;
+    PanelComponent mixerComponent;
+    PanelComponent highPassFilterComponent;
+    PanelComponent lowPassFilterComponent;
+    PanelComponent envelope1Component;
+    PanelComponent envelope2Component;
+    PanelComponent masterComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };

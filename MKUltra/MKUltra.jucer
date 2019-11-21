@@ -7,6 +7,8 @@
       <FILE id="Pkv2Us" name="Synth.h" compile="0" resource="0" file="Source/Synth.h"/>
       <FILE id="tgL0E6" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="ak7GzD" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="hGSTyo" name="PanelComponent.h" compile="0" resource="0"
+            file="Source/PanelComponent.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

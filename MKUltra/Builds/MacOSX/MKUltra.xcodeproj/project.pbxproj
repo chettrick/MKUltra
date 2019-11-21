@@ -196,6 +196,13 @@
 			path = ../../Source/Synth.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		58A5A0DD20B2D7B0FF14078E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = PanelComponent.h;
+			path = ../../Source/PanelComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		6395ACECB02570ED0F772470 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -413,6 +420,7 @@
 				53FA554953054A20698D492D,
 				F09DD654569FD8EA93703E91,
 				7BBB75056DDDE0AE97327BCB,
+				58A5A0DD20B2D7B0FF14078E,
 			);
 			name = Source;
 			sourceTree = "<group>";
