@@ -64,6 +64,7 @@ struct TriangleWaveVoice : public SynthesiserVoice
 			if (tailOff > 0.0) {
 				while (--numSamples >= 0) {
 					auto currentSample = (float)(std::asin(std::sin(currentAngle)) * level * tailOff);
+					currentSample = currentSample * 0.7;
 
 					for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 						outputBuffer.addSample(i, startSample, currentSample);
@@ -85,6 +86,7 @@ struct TriangleWaveVoice : public SynthesiserVoice
 			else {
 				while (--numSamples >= 0) {
 					auto currentSample = (float)(std::asin(std::sin(currentAngle)) * level);
+					currentSample = currentSample * 0.7;
 
 					for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 						outputBuffer.addSample(i, startSample, currentSample);

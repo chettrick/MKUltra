@@ -26,9 +26,26 @@ public:
 		header.setButtonText(name);
 		addAndMakeVisible(header);
 
-		mySlider.setSliderStyle(Slider::SliderStyle::Rotary);
-		mySlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
-		addAndMakeVisible(mySlider);
+		//Cutoff Rotary Slider and Label
+		osc1Slider.setSliderStyle(Slider::SliderStyle::Rotary);
+		osc1Slider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
+
+		addAndMakeVisible(osc1Label);
+		osc1Label.setText("OSC1", dontSendNotification);
+		osc1Label.attachToComponent(&osc1Slider, false);
+		osc1Label.setJustificationType(Justification::centred);
+
+		//Decay Rotary Slider and Label
+		osc2Slider.setSliderStyle(Slider::SliderStyle::Rotary);
+		osc2Slider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
+
+		addAndMakeVisible(osc2Label);
+		osc2Label.setText("OSC2", dontSendNotification);
+		osc2Label.attachToComponent(&osc2Slider, false);
+		osc2Label.setJustificationType(Justification::centred);
+
+		addAndMakeVisible(osc1Slider);
+		addAndMakeVisible(osc2Slider);
 	}
 
 	~MixerComponent()
@@ -57,9 +74,10 @@ public:
 		auto area = getLocalBounds();
 
 		header.setBounds(area.removeFromTop(headerHeight));
-		mySlider.setBounds(area.removeFromTop(75));
-
-
+		osc1Label.setBounds(area.removeFromTop(50));
+		osc1Slider.setBounds(area.removeFromTop(75));
+		osc2Label.setBounds(area.removeFromTop(20));
+		osc2Slider.setBounds(area.removeFromTop(75));
 	}
 
 private:
@@ -67,7 +85,11 @@ private:
 
 	TextButton header;
 
-	Slider mySlider;
+	Slider osc1Slider;
+	Slider osc2Slider;
+
+	Label osc1Label;
+	Label osc2Label;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MixerComponent)
 };

@@ -35,7 +35,6 @@ public:
     }
 
 	void setOscillatorType(char OSCType) {
-		int m = 0; //garbage placeholder
 		synth.clearVoices();
 		synth.clearSounds();
 	
@@ -64,14 +63,12 @@ public:
 		}
 		else if (OSCType == OSC_SAW_ANA)
 		{
-			m = 0;
 			for (auto i = 0; i < 4; ++i) {
 				synth.addVoice(new SineWaveVoice());
 			}
 		}
 		else if (OSCType == OSC_SAW_DIG)
 		{
-			m = 0;
 			for (auto i = 0; i < 4; ++i) {
 				synth.addVoice(new SineWaveVoice());
 			}

@@ -10,19 +10,24 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PanelComponent.h"
+#include "MainComponent.h"
+#include "Synth.h"
 
 //==============================================================================
 /*
 */
-class OscillatorComponent : public PanelComponent
+class OscillatorComponent : public PanelComponent,
+							public Button::Listener
 {
 public:
 	OscillatorComponent() {}
 
-	OscillatorComponent(const String& name)
+	OscillatorComponent(const String& name, SynthAudioSource& synthAudioSource)
 	{
 		// In your constructor, you should add any child components, and
 		// initialise any special settings that your component needs.
+		this->synthAudioSource = &synthAudioSource;
+
 		header.setButtonText(name);
 		addAndMakeVisible(header);
 
@@ -36,6 +41,9 @@ public:
 		addAndMakeVisible(sineButton);
 		addAndMakeVisible(squareButton);
 		addAndMakeVisible(triangleButton);
+		sineButton.addListener(this);
+		squareButton.addListener(this);
+		triangleButton.addListener(this);
 	}
 
 	~OscillatorComponent()
@@ -68,12 +76,31 @@ public:
 		triangleButton.setBounds(area.removeFromBottom(50));
 		squareButton.setBounds(area.removeFromBottom(50));
 		sineButton.setBounds(area.removeFromBottom(50));
-		
-		
+	}
+
+	void buttonClicked(Button* button) override
+	{
+		if (button == &sineButton)
+		{
+			//sineButton.setButtonText("Clicked");
+			synthAudioSource->setOscillatorType(OSC_SINE);
+		}
+		else if (button == &squareButton)
+		{
+			//squareButton.setButtonText("Clicked");
+			synthAudioSource->setOscillatorType(OSC_SQUARE);
+		}
+		else if (button == &triangleButton)
+		{
+			//triangleButton.setButtonText("Clicked");
+			synthAudioSource->setOscillatorType(OSC_TRIANGLE);
+		}
 	}
 
 private:
 	int headerHeight = 30;
+
+	SynthAudioSource* synthAudioSource;
 
 	TextButton header;
 	Slider mySlider;

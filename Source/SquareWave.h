@@ -64,6 +64,7 @@ struct SquareWaveVoice : public SynthesiserVoice
 			if (tailOff > 0.0) {
 				while (--numSamples >= 0) {
 					auto currentSample = (float)(std::sin(currentAngle) > 0.0 ? 1.0 : -1.0 * level * tailOff);
+					currentSample = currentSample * 0.05; //Here to lower to Square Wave to be comparable to Sine/Triangle
 
 					for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 						outputBuffer.addSample(i, startSample, currentSample);
@@ -85,6 +86,7 @@ struct SquareWaveVoice : public SynthesiserVoice
 			else {
 				while (--numSamples >= 0) {
 					auto currentSample = (float)(std::sin(currentAngle) > 0.0 ? 1.0 : -1.0 * level);
+					currentSample = currentSample * 0.05; //Here to lower to Square Wave to be comparable to Sine/Triangle
 
 					for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
 						outputBuffer.addSample(i, startSample, currentSample);

@@ -13,7 +13,7 @@
 //==============================================================================
 /*
 */
-class PanelComponent    : public Component
+class PanelComponent    :	public Component
 {
 public:
 	PanelComponent() {}
