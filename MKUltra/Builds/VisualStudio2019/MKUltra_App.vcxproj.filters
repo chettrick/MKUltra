@@ -2247,6 +2247,9 @@
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\OscillatorComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PanelComponent.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>

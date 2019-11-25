@@ -11,6 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #include "Synth.h"
+#include "OscillatorComponent.h"
 #include "PanelComponent.h"
 
 //==============================================================================
@@ -183,8 +184,8 @@ private:
     ComboBox midiInputList;
     int lastInputIndex = 0;
 
-    PanelComponent oscillator1Component;
-    PanelComponent oscillator2Component;
+    OscillatorComponent oscillator1Component;
+    OscillatorComponent oscillator2Component;
     PanelComponent mixerComponent;
     PanelComponent highPassFilterComponent;
     PanelComponent lowPassFilterComponent;
