@@ -1,0 +1,2 @@
+rootProject.name = 'MKUltra'
+include ':app'
