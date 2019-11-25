@@ -32,6 +32,7 @@ struct SineWaveVoice : public SynthesiserVoice
     void startNote(int midiNoteNumber, float velocity,
         SynthesiserSound*, int /*currentPitchWheelPosition*/) override
     {
+
         currentAngle = 0.0;
         level = velocity * 0.15;
         tailOff = 0.0;

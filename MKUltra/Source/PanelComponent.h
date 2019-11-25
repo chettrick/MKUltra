@@ -13,15 +13,21 @@
 //==============================================================================
 /*
 */
-class PanelComponent    : public Component
+class PanelComponent    :	public Component
 {
 public:
+	PanelComponent() {}
+
     PanelComponent(const String& name)
     {
         // In your constructor, you should add any child components, and
         // initialise any special settings that your component needs.
         header.setButtonText(name);
         addAndMakeVisible(header);
+
+		//myslider.setSliderStyle(Slider::SliderStyle::Rotary);
+		//myslider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true,0,0);
+		//addAndMakeVisible(myslider);
     }
 
     ~PanelComponent()
@@ -50,12 +56,14 @@ public:
         auto area = getLocalBounds();
 
         header.setBounds (area.removeFromTop (headerHeight));
+		//myslider.setBounds(area.removeFromTop(50));
     }
 
 private:
     int headerHeight = 30;
 
     TextButton header;
+	//Slider myslider;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PanelComponent)
 };

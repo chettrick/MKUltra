@@ -1853,11 +1853,21 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_gui_extra.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\SineWave.h"/>
-    <ClInclude Include="..\..\Source\Synth.h"/>
+    <ClInclude Include="..\..\Source\EnvelopeComponent.h"/>
+    <ClInclude Include="..\..\Source\HPFComponent.h"/>
+    <ClInclude Include="..\..\Source\LPFComponent.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
+    <ClInclude Include="..\..\Source\MasterComponent.h"/>
+    <ClInclude Include="..\..\Source\MixerComponent.h"/>
+    <ClInclude Include="..\..\Source\Noise.h"/>
     <ClInclude Include="..\..\Source\OscillatorComponent.h"/>
     <ClInclude Include="..\..\Source\PanelComponent.h"/>
+    <ClInclude Include="..\..\Source\SawAnalogDigital.h"/>
+    <ClInclude Include="..\..\Source\SawAnalogWave.h"/>
+    <ClInclude Include="..\..\Source\SineWave.h"/>
+    <ClInclude Include="..\..\Source\SquareWave.h"/>
+    <ClInclude Include="..\..\Source\Synth.h"/>
+    <ClInclude Include="..\..\Source\TriangleWave.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

@@ -2238,19 +2238,49 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\SineWave.h">
+    <ClInclude Include="..\..\Source\EnvelopeComponent.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Synth.h">
+    <ClInclude Include="..\..\Source\HPFComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\LPFComponent.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MasterComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MixerComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Noise.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\OscillatorComponent.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PanelComponent.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SawAnalogDigital.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SawAnalogWave.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SineWave.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SquareWave.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Synth.h">
+      <Filter>MKUltra\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TriangleWave.h">
       <Filter>MKUltra\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\JuceLibraryCode\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">

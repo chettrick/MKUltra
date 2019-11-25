@@ -8,7 +8,7 @@ SET(BINARY_NAME "juce_jni")
 add_library("cpufeatures" STATIC "${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c")
 set_source_files_properties("${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c" PROPERTIES COMPILE_FLAGS "-Wno-sign-conversion -Wno-gnu-statement-expression")
 
-add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"æ½£â½­æ½²æ¥¬æ¨¯æµâ½¥ç•Šæ•£ææ¥´æ¥¶ç¥´ì´€ì·ì·ì·ì·ì·ï·ï·½ö—ö‡—ö‡—ö‡—äµ¶ä“è€€ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—ö‡—î·˜äµ®ä—è´€æ°ë®­Ç\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
+add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"æ½£â½­æ½²æ¥¬æ¨¯æµâ½¥ç•Šæ•£ææ¥´æ¥¶ç¥´ì´€ì·ì·ì·ì·ì·ï·ï·½ö—ö‡—ö‡—í·æ¿•ä¶¬å·è°€ï ë®¥Ç\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
 
 include_directories( AFTER
     "../../../JuceLibraryCode"
@@ -30,12 +30,22 @@ add_library( ${BINARY_NAME}
 
     SHARED
 
-    "../../../Source/SineWave.h"
-    "../../../Source/Synth.h"
-    "../../../Source/MainComponent.h"
+    "../../../Source/EnvelopeComponent.h"
+    "../../../Source/HPFComponent.h"
+    "../../../Source/LPFComponent.h"
     "../../../Source/Main.cpp"
+    "../../../Source/MainComponent.h"
+    "../../../Source/MasterComponent.h"
+    "../../../Source/MixerComponent.h"
+    "../../../Source/Noise.h"
     "../../../Source/OscillatorComponent.h"
     "../../../Source/PanelComponent.h"
+    "../../../Source/SawAnalogDigital.h"
+    "../../../Source/SawAnalogWave.h"
+    "../../../Source/SineWave.h"
+    "../../../Source/SquareWave.h"
+    "../../../Source/Synth.h"
+    "../../../Source/TriangleWave.h"
     "../../../JuceLibraryCode/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h"
     "../../../JuceLibraryCode/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp"
     "../../../JuceLibraryCode/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h"
@@ -1325,11 +1335,21 @@ add_library( ${BINARY_NAME}
     "../../../JuceLibraryCode/JuceHeader.h"
 )
 
-set_source_files_properties("../../../Source/SineWave.h" PROPERTIES HEADER_FILE_ONLY TRUE)
-set_source_files_properties("../../../Source/Synth.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/EnvelopeComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/HPFComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/LPFComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/MasterComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/MixerComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/Noise.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/OscillatorComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/PanelComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/SawAnalogDigital.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/SawAnalogWave.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/SineWave.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/SquareWave.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/Synth.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/TriangleWave.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h" PROPERTIES HEADER_FILE_ONLY TRUE)

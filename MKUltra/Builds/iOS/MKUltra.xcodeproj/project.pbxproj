@@ -222,6 +222,13 @@
 			path = System/Library/Frameworks/AVFoundation.framework;
 			sourceTree = SDKROOT;
 		};
+		4DFB150654A9C384D6299253 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MasterComponent.h;
+			path = ../../Source/MasterComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		4F004D6DD4DCCD6EC84AEBF6 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -236,6 +243,13 @@
 			path = ../../Source/Synth.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		569DFD7F70428964DB846DF7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = HPFComponent.h;
+			path = ../../Source/HPFComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		58A5A0DD20B2D7B0FF14078E = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -243,11 +257,25 @@
 			path = ../../Source/PanelComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		59A692ABA877D08D0B9FEDD7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = Noise.h;
+			path = ../../Source/Noise.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		5F20459996E080B2AA9EEBA6 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
 			name = OscillatorComponent.h;
 			path = ../../Source/OscillatorComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
+		60692DA10B4C11CFB37AB804 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = SquareWave.h;
+			path = ../../Source/SquareWave.h;
 			sourceTree = "SOURCE_ROOT";
 		};
 		6395ACECB02570ED0F772470 = {
@@ -271,12 +299,33 @@
 			path = "../../JuceLibraryCode/modules/juce_data_structures";
 			sourceTree = "SOURCE_ROOT";
 		};
+		73749B3476E7F4F0FC01D524 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = LPFComponent.h;
+			path = ../../Source/LPFComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
+		73FC78D603D6CE410090A807 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = TriangleWave.h;
+			path = ../../Source/TriangleWave.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		7529F9A4F7F8AEF7BF392A6A = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
 			name = CoreMIDI.framework;
 			path = System/Library/Frameworks/CoreMIDI.framework;
 			sourceTree = SDKROOT;
+		};
+		78EB461B441D1394C7F36D86 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = SawAnalogDigital.h;
+			path = ../../Source/SawAnalogDigital.h;
+			sourceTree = "SOURCE_ROOT";
 		};
 		7B7A2B233C17F2BB4642F5D0 = {
 			isa = PBXFileReference;
@@ -313,6 +362,13 @@
 			path = "../../JuceLibraryCode/modules/juce_audio_formats";
 			sourceTree = "SOURCE_ROOT";
 		};
+		9A387E7048E6AD504D2A7991 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = SawAnalogWave.h;
+			path = ../../Source/SawAnalogWave.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		A8BE920A1294D6AAB17D6E56 = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.framework;
@@ -340,6 +396,13 @@
 			includeInIndex = 0;
 			path = MKUltra.app;
 			sourceTree = "BUILT_PRODUCTS_DIR";
+		};
+		AD51B795272C0D0F8C596D1F = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = EnvelopeComponent.h;
+			path = ../../Source/EnvelopeComponent.h;
+			sourceTree = "SOURCE_ROOT";
 		};
 		AD65308AC80763ACC4A80ECC = {
 			isa = PBXFileReference;
@@ -404,6 +467,13 @@
 			path = ../../Source/SineWave.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		D92A212F69D8B4F613DED265 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = MixerComponent.h;
+			path = ../../Source/MixerComponent.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		DC6E87D5E07E00390EB21533 = {
 			isa = PBXFileReference;
 			lastKnownFileType = file;
@@ -456,12 +526,22 @@
 		FE4C57E84A7183AF4D471202 = {
 			isa = PBXGroup;
 			children = (
-				D34EBBAB32F72CA5A786BE00,
-				53FA554953054A20698D492D,
-				F09DD654569FD8EA93703E91,
+				AD51B795272C0D0F8C596D1F,
+				569DFD7F70428964DB846DF7,
+				73749B3476E7F4F0FC01D524,
 				7BBB75056DDDE0AE97327BCB,
+				F09DD654569FD8EA93703E91,
+				4DFB150654A9C384D6299253,
+				D92A212F69D8B4F613DED265,
+				59A692ABA877D08D0B9FEDD7,
 				5F20459996E080B2AA9EEBA6,
 				58A5A0DD20B2D7B0FF14078E,
+				78EB461B441D1394C7F36D86,
+				9A387E7048E6AD504D2A7991,
+				D34EBBAB32F72CA5A786BE00,
+				60692DA10B4C11CFB37AB804,
+				53FA554953054A20698D492D,
+				73FC78D603D6CE410090A807,
 			);
 			name = Source;
 			sourceTree = "<group>";

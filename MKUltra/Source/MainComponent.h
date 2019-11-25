@@ -11,8 +11,13 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #include "Synth.h"
-#include "OscillatorComponent.h"
 #include "PanelComponent.h"
+#include "OscillatorComponent.h"
+#include "MixerComponent.h"
+#include "EnvelopeComponent.h"
+#include "HPFComponent.h"
+#include "LPFComponent.h"
+#include "MasterComponent.h"
 
 //==============================================================================
 /*
@@ -26,7 +31,7 @@ public:
     MainComponent()
         : synthAudioSource(keyboardState),
         keyboardComponent(keyboardState, MidiKeyboardComponent::horizontalKeyboard),
-        oscillator1Component("Oscillator 1"),
+        oscillator1Component("Oscillator 1", synthAudioSource),
         oscillator2Component("Oscillator 2"),
         mixerComponent("Mixer"),
         highPassFilterComponent("High Pass Filter"),
@@ -74,6 +79,8 @@ public:
         addAndMakeVisible (envelope2Component);
         addAndMakeVisible (masterComponent);
 
+		//synthAudioSource.setOscillatorType(OSC_TRIANGLE);
+
         // Make sure you set the size of the component after
         // you add any child components.
         setSize(1000, 600);
@@ -104,6 +111,8 @@ public:
     void getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill) override
     {
         // Your audio-processing code goes here!
+		
+		//synthAudioSource.getNextAudioBlock(intermediateBuffer);
 
         // For more details, see the help for AudioProcessor::getNextAudioBlock()
         synthAudioSource.getNextAudioBlock(bufferToFill);
@@ -185,13 +194,13 @@ private:
     int lastInputIndex = 0;
 
     OscillatorComponent oscillator1Component;
-    OscillatorComponent oscillator2Component;
-    PanelComponent mixerComponent;
-    PanelComponent highPassFilterComponent;
-    PanelComponent lowPassFilterComponent;
-    PanelComponent envelope1Component;
-    PanelComponent envelope2Component;
-    PanelComponent masterComponent;
+    PanelComponent oscillator2Component;
+    MixerComponent mixerComponent;
+    HPFComponent highPassFilterComponent;
+    LPFComponent lowPassFilterComponent;
+    EnvelopeComponent envelope1Component;
+    EnvelopeComponent envelope2Component;
+    MasterComponent masterComponent;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
