@@ -8,7 +8,7 @@ SET(BINARY_NAME "juce_jni")
 add_library("cpufeatures" STATIC "${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c")
 set_source_files_properties("${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c" PROPERTIES COMPILE_FLAGS "-Wno-sign-conversion -Wno-gnu-statement-expression")
 
-add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"æ½£â½­æ½²æ¥¬æ¨¯æµâ½¥ç•Šæ•£ææ¥´æ¥¶ç¥´ì´€ì·ì·ì·ì·ì·ï·ï·½ö—ö‡—ö‡—í·æ¿•ä¶¬å·è°€ï ë®¥Ç\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
+add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"æ½£â½­æ½²æ¥¬æ¨¯æµâ½¥ç•Šæ•£ææ¥´æ¥¶ç¥´ì´€ì·ì·ì·ì·ì·ï·ï·½ö—ö‡—ö‡—í·à½³ï™©à§è´á£ ê…¬É®\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
 
 include_directories( AFTER
     "../../../JuceLibraryCode"
