@@ -1,0 +1,45 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Android-specific build files
+#Builds/Android/.gradle/*
+.gradle
+.idea
+**/Android/app/.externalNativeBuild
+**/Android/app/debug_
+**/Android/local.properties
+
+# Visual Studio 2019-specific build files
+**/VisualStudio2019/.vs/*
+**/VisualStudio2019/MKUltra_App.vcxproj.user
+**/VisualStudio2019/x64/*
