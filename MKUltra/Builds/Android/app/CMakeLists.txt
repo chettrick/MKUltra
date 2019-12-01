@@ -8,7 +8,7 @@ SET(BINARY_NAME "juce_jni")
 add_library("cpufeatures" STATIC "${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c")
 set_source_files_properties("${ANDROID_NDK}/sources/android/cpufeatures/cpu-features.c" PROPERTIES COMPILE_FLAGS "-Wno-sign-conversion -Wno-gnu-statement-expression")
 
-add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"潣⽭潲楬樯捵⽥畊散捁楴楶祴촀췍췍췍췍췍﷍﷽���������������ཱིঢ়贁ᣠꅬɮ\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
+add_definitions("-DJUCE_ANDROID=1" "-DJUCE_ANDROID_API_VERSION=16" "-DJUCE_PUSH_NOTIFICATIONS=1" "-DJUCE_PUSH_NOTIFICATIONS_ACTIVITY=\"潣⽭潲楬樯捵⽥畊散捁楴楶祴딀ɗ\"" "-DJUCER_ANDROIDSTUDIO_7F0E4A25=1" "-DJUCE_APP_VERSION=1.0.0" "-DJUCE_APP_VERSION_HEX=0x10000")
 
 include_directories( AFTER
     "../../../JuceLibraryCode"
@@ -32,6 +32,7 @@ add_library( ${BINARY_NAME}
 
     "../../../Source/EnvelopeComponent.h"
     "../../../Source/HPFComponent.h"
+    "../../../Source/icon.png"
     "../../../Source/LPFComponent.h"
     "../../../Source/Main.cpp"
     "../../../Source/MainComponent.h"
@@ -1321,6 +1322,8 @@ add_library( ${BINARY_NAME}
     "../../../JuceLibraryCode/modules/juce_gui_extra/juce_gui_extra.mm"
     "../../../JuceLibraryCode/modules/juce_gui_extra/juce_gui_extra.h"
     "../../../JuceLibraryCode/AppConfig.h"
+    "../../../JuceLibraryCode/BinaryData.cpp"
+    "../../../JuceLibraryCode/BinaryData.h"
     "../../../JuceLibraryCode/include_juce_audio_basics.cpp"
     "../../../JuceLibraryCode/include_juce_audio_devices.cpp"
     "../../../JuceLibraryCode/include_juce_audio_formats.cpp"
@@ -1337,6 +1340,7 @@ add_library( ${BINARY_NAME}
 
 set_source_files_properties("../../../Source/EnvelopeComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/HPFComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../Source/icon.png" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/LPFComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/MainComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../Source/MasterComponent.h" PROPERTIES HEADER_FILE_ONLY TRUE)
@@ -2625,6 +2629,7 @@ set_source_files_properties("../../../JuceLibraryCode/modules/juce_gui_extra/juc
 set_source_files_properties("../../../JuceLibraryCode/modules/juce_gui_extra/juce_gui_extra.mm" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/modules/juce_gui_extra/juce_gui_extra.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/AppConfig.h" PROPERTIES HEADER_FILE_ONLY TRUE)
+set_source_files_properties("../../../JuceLibraryCode/BinaryData.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 set_source_files_properties("../../../JuceLibraryCode/JuceHeader.h" PROPERTIES HEADER_FILE_ONLY TRUE)
 
 find_library(log "log")

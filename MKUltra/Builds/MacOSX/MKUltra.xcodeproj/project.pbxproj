@@ -57,9 +57,17 @@
 			isa = PBXBuildFile;
 			fileRef = 70C99D8EC3C6735C856796D3;
 		};
+		47C894EADE97C8BEAF987146 = {
+			isa = PBXBuildFile;
+			fileRef = 12939BCFA9993BDA4A8DD655;
+		};
 		97882FDB5907E688EDF9FAEA = {
 			isa = PBXBuildFile;
 			fileRef = 7BBB75056DDDE0AE97327BCB;
+		};
+		0D3EFC19EDB6850EE689A6A1 = {
+			isa = PBXBuildFile;
+			fileRef = 4B7525C07AFC6BB1731E01FE;
 		};
 		33FFBA353FBD24136C77A5ED = {
 			isa = PBXBuildFile;
@@ -119,6 +127,13 @@
 			path = System/Library/Frameworks/DiscRecording.framework;
 			sourceTree = SDKROOT;
 		};
+		12939BCFA9993BDA4A8DD655 = {
+			isa = PBXFileReference;
+			lastKnownFileType = file.icns;
+			name = Icon.icns;
+			path = Icon.icns;
+			sourceTree = "SOURCE_ROOT";
+		};
 		15B2FF4EDB68DE0DDE5AB245 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -175,6 +190,13 @@
 			path = System/Library/Frameworks/CoreAudio.framework;
 			sourceTree = SDKROOT;
 		};
+		4B7525C07AFC6BB1731E01FE = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = BinaryData.cpp;
+			path = ../../JuceLibraryCode/BinaryData.cpp;
+			sourceTree = "SOURCE_ROOT";
+		};
 		4DFB150654A9C384D6299253 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.c.h;
@@ -195,6 +217,13 @@
 			name = WebKit.framework;
 			path = System/Library/Frameworks/WebKit.framework;
 			sourceTree = SDKROOT;
+		};
+		5239FCF4EA81649D67791FEB = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			name = icon.png;
+			path = ../../Source/icon.png;
+			sourceTree = "SOURCE_ROOT";
 		};
 		53FA554953054A20698D492D = {
 			isa = PBXFileReference;
@@ -476,6 +505,13 @@
 			path = ../../Source/MainComponent.h;
 			sourceTree = "SOURCE_ROOT";
 		};
+		F61DB05BEA38581D05403588 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = BinaryData.h;
+			path = ../../JuceLibraryCode/BinaryData.h;
+			sourceTree = "SOURCE_ROOT";
+		};
 		FA1830D3D615D2DAC09B34F3 = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -495,6 +531,7 @@
 			children = (
 				AD51B795272C0D0F8C596D1F,
 				569DFD7F70428964DB846DF7,
+				5239FCF4EA81649D67791FEB,
 				73749B3476E7F4F0FC01D524,
 				7BBB75056DDDE0AE97327BCB,
 				F09DD654569FD8EA93703E91,
@@ -543,6 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				6395ACECB02570ED0F772470,
+				4B7525C07AFC6BB1731E01FE,
+				F61DB05BEA38581D05403588,
 				2A914A1B276992BA8AE75FF4,
 				B822DAA71A0C96F3C277CCBD,
 				15B2FF4EDB68DE0DDE5AB245,
@@ -564,6 +603,7 @@
 			children = (
 				E6A62DA0D024798121362D8E,
 				70C99D8EC3C6735C856796D3,
+				12939BCFA9993BDA4A8DD655,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -814,6 +854,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB5A100609526A43837CA69,
+				47C894EADE97C8BEAF987146,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97882FDB5907E688EDF9FAEA,
+				0D3EFC19EDB6850EE689A6A1,
 				33FFBA353FBD24136C77A5ED,
 				D82087668ECA534AB1E35732,
 				AA02F1ED53F2B02271E3A58C,
