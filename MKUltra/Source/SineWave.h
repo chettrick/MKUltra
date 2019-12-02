@@ -10,6 +10,8 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#include "EnvelopeComponent.h"
+
 //==============================================================================
 struct SineWaveSound : public SynthesiserSound
 {
@@ -32,7 +34,7 @@ struct SineWaveVoice : public SynthesiserVoice
     void startNote(int midiNoteNumber, float velocity,
         SynthesiserSound*, int /*currentPitchWheelPosition*/) override
     {
-
+        adsr.noteOn();
         currentAngle = 0.0;
         level = velocity * 0.15;
         tailOff = 0.0;
@@ -45,6 +47,8 @@ struct SineWaveVoice : public SynthesiserVoice
 
     void stopNote(float /*velocity*/, bool allowTailOff) override
     {
+        adsr.noteOff();
+
         if (allowTailOff) {
             if (tailOff == 0.0) {
                 tailOff = 1.0;
@@ -60,10 +64,12 @@ struct SineWaveVoice : public SynthesiserVoice
 
     void renderNextBlock(AudioSampleBuffer& outputBuffer, int startSample, int numSamples) override
     {
+        adsr.setParameters(adsrParameters);
+
         if (angleDelta != 0.0) {
             if (tailOff > 0.0) {
                 while (--numSamples >= 0) {
-                    auto currentSample = (float)(std::sin(currentAngle) * level * tailOff);
+                    auto currentSample = (float)(std::sin(currentAngle) * level * tailOff * adsr.getNextSample());
 
                     for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
                         outputBuffer.addSample(i, startSample, currentSample);
@@ -83,7 +89,7 @@ struct SineWaveVoice : public SynthesiserVoice
                 }
             } else {
                 while (--numSamples >= 0) {
-                    auto currentSample = (float)(std::sin(currentAngle) * level);
+                    auto currentSample = (float)(std::sin(currentAngle) * level * adsr.getNextSample());
 
                     for (auto i = outputBuffer.getNumChannels(); --i >= 0;) {
                         outputBuffer.addSample(i, startSample, currentSample);
@@ -96,9 +102,25 @@ struct SineWaveVoice : public SynthesiserVoice
         }
     }
 
+    void setADSRSampleRate(double sampleRate)
+    {
+        adsr.setSampleRate(sampleRate);
+    }
+
+    void getEnvelopeParameters(float* attack, float* decay, float* sustain, float* release)
+    {
+        adsrParameters.attack = *attack;
+        adsrParameters.decay = *decay;
+        adsrParameters.sustain = *sustain;
+        adsrParameters.release = *release;
+    }
+
 private:
     double currentAngle = 0.0;
     double angleDelta = 0.0;
     double level = 0.0;
     double tailOff = 0.0;
+
+    ADSR adsr;
+    ADSR::Parameters adsrParameters;
 };

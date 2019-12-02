@@ -89,8 +89,9 @@ public:
 
     void prepareToPlay (int /*samplesPerBlockExpected*/, double sampleRate) override
     {
-        synth.setCurrentPlaybackSampleRate (sampleRate);
-        midiCollector.reset (sampleRate);
+        lastSampleRate = sampleRate;
+        synth.setCurrentPlaybackSampleRate (lastSampleRate);
+        midiCollector.reset (lastSampleRate);
     }
 
     void releaseResources() override {}
@@ -98,6 +99,21 @@ public:
     void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
     {
         bufferToFill.clearActiveBufferRegion();
+
+        for (int i = 0; i < synth.getNumVoices(); i++) {
+            if (voice = dynamic_cast<SineWaveVoice*>(synth.getVoice(i))) {
+                voice->setADSRSampleRate(lastSampleRate);
+
+                float a{ 5.0 };
+                float d{ 3.0 };
+                float s{ 0.9 };
+                float r{ 5.0 };
+
+                voice->getEnvelopeParameters(&a, &d, &s, &r);
+            }
+        }
+
+
 
         MidiBuffer incomingMidi;
         midiCollector.removeNextBlockOfMessages (incomingMidi, bufferToFill.numSamples);
@@ -117,5 +133,7 @@ public:
 private:
     MidiKeyboardState& keyboardState;
     Synthesiser synth;
+    SineWaveVoice *voice;
     MidiMessageCollector midiCollector;
+    double lastSampleRate;
 };

@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PanelComponent.h"
+#include "SineWave.h"
 
 //==============================================================================
 /*
@@ -30,6 +31,8 @@ public:
 		attackSlider.setSliderStyle(Slider::SliderStyle::Rotary);
 		attackSlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 		attackSlider.Component::setColour(Slider::rotarySliderFillColourId, Colours::darkslategrey);
+ //       attackSlider.onValueChange = [this] { synthAudioSource->setAttackParameter(attackSlider.getValue()); };
+
 
 		addAndMakeVisible(attackLabel);
 		attackLabel.setText("Attack", dontSendNotification);
@@ -122,4 +125,3 @@ private:
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(EnvelopeComponent)
 };
-
