@@ -20,8 +20,6 @@ class OscillatorComponent : public PanelComponent,
 							public Button::Listener
 {
 public:
-	OscillatorComponent() {}
-
 	OscillatorComponent(const String& name, SynthAudioSource& synthAudioSource)
 	{
 		// In your constructor, you should add any child components, and
@@ -30,10 +28,6 @@ public:
 
 		header.setButtonText(name);
 		addAndMakeVisible(header);
-
-		mySlider.setSliderStyle(Slider::SliderStyle::Rotary);
-		mySlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true,0,0);
-		addAndMakeVisible(mySlider);
 
 		sineButton.setButtonText("Sine");
 		squareButton.setButtonText("Square");
