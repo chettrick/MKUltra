@@ -31,7 +31,7 @@ public:
 		osc1Slider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 
 		addAndMakeVisible(osc1Label);
-		osc1Label.setText("OSC1", dontSendNotification);
+		osc1Label.setText("Oscillator 1", dontSendNotification);
 		osc1Label.attachToComponent(&osc1Slider, false);
 		osc1Label.setJustificationType(Justification::centred);
 
@@ -40,7 +40,7 @@ public:
 		osc2Slider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 
 		addAndMakeVisible(osc2Label);
-		osc2Label.setText("OSC2", dontSendNotification);
+		osc2Label.setText("Oscillator 2", dontSendNotification);
 		osc2Label.attachToComponent(&osc2Slider, false);
 		osc2Label.setJustificationType(Justification::centred);
 

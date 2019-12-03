@@ -74,19 +74,11 @@ public:
 
 	void buttonClicked(Button* button) override
 	{
-		if (button == &sineButton)
-		{
-			//sineButton.setButtonText("Clicked");
+		if (button == &sineButton) {
 			synthAudioSource->setOscillatorType(OSC_SINE);
-		}
-		else if (button == &squareButton)
-		{
-			//squareButton.setButtonText("Clicked");
+		} else if (button == &squareButton) {
 			synthAudioSource->setOscillatorType(OSC_SQUARE);
-		}
-		else if (button == &triangleButton)
-		{
-			//triangleButton.setButtonText("Clicked");
+		} else if (button == &triangleButton) {
 			synthAudioSource->setOscillatorType(OSC_TRIANGLE);
 		}
 	}
@@ -105,4 +97,3 @@ private:
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(OscillatorComponent)
 };
-

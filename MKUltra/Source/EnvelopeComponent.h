@@ -35,7 +35,7 @@ public:
 
 
 		addAndMakeVisible(attackLabel);
-		attackLabel.setText("Attack", dontSendNotification);
+		attackLabel.setText("Attack Time", dontSendNotification);
 		attackLabel.attachToComponent(&attackSlider, false);
 		attackLabel.setJustificationType(Justification::centred);
 
@@ -44,7 +44,7 @@ public:
 		decaySlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 		
 		addAndMakeVisible(decayLabel);
-		decayLabel.setText("Decay", dontSendNotification);
+		decayLabel.setText("Decay Time", dontSendNotification);
 		decayLabel.attachToComponent(&decaySlider, false);
 		decayLabel.setJustificationType(Justification::centred);
 
@@ -53,7 +53,7 @@ public:
 		sustainSlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 		
 		addAndMakeVisible(sustainLabel);
-		sustainLabel.setText("Sustain", dontSendNotification);
+		sustainLabel.setText("Sustain Level", dontSendNotification);
 		sustainLabel.attachToComponent(&sustainSlider, false);
 		sustainLabel.setJustificationType(Justification::centred);
 
@@ -62,7 +62,7 @@ public:
 		releaseSlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 		
 		addAndMakeVisible(releaseLabel);
-		releaseLabel.setText("Release", dontSendNotification);
+		releaseLabel.setText("Release Time", dontSendNotification);
 		releaseLabel.attachToComponent(&releaseSlider, false);
 		releaseLabel.setJustificationType(Justification::centred);
 

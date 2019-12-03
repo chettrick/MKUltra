@@ -31,7 +31,7 @@ public:
 		volumeSlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 
 		addAndMakeVisible(volumeLabel);
-		volumeLabel.setText("Level", dontSendNotification);
+		volumeLabel.setText("Master Level", dontSendNotification);
 		volumeLabel.attachToComponent(&volumeSlider, false);
 		volumeLabel.setJustificationType(Justification::centred);
 

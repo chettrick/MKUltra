@@ -31,7 +31,7 @@ public:
 		cutoffSlider.setTextBoxStyle(Slider::TextEntryBoxPosition::NoTextBox, true, 0, 0);
 
 		addAndMakeVisible(cutoffLabel);
-		cutoffLabel.setText("Cutoff Freq", dontSendNotification);
+		cutoffLabel.setText("Cutoff Frequency", dontSendNotification);
 		cutoffLabel.attachToComponent(&cutoffSlider, false);
 		cutoffLabel.setJustificationType(Justification::centred);
 
