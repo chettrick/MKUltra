@@ -1,14 +1,14 @@
 # Designing a Musical Software Synthesizer: MKUltra
 
-![Image of MKUltra synthesizer user interface](https://iainemslie.github.io/images/image22.png)
+![Image of MKUltra synthesizer user interface](https://chettrick.github.io/MKUltra/images/image22.png)
 
 ## Building the Project on Windows using Visual Studio 2019
 Note: [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) must be installed to build this project.
 
-### [Download](https://github.com/iainemslie/CSC461Project/archive/master.zip) the Repository
+### [Download](https://github.com/chettrick/MKUltra/archive/master.zip) the Repository
 * Click the green "Clone or download" button.
 * Click "Download ZIP".
-* Navigate to the downloaded file (named "CSC461Project-master.zip") and
+* Navigate to the downloaded file (named "MKUltra-master.zip") and
   extract the archive by right-clicking on the file and selecting "Extract All...".
   
 ### Open the Project in Visual Studio 2019
@@ -35,7 +35,7 @@ Note: Installing [Git on Windows](https://git-scm.com/downloads) with Git Bash i
 ### Clone the Repository
 ``` shell
 $ cd <some directory>
-$ git clone https://iainemslie/CSC461Project
+$ git clone https://github.com/chettrick/MKUltra
 ```
 
 ### Open the Project in Visual Studio 2019
